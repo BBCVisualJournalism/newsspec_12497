@@ -1,7 +1,30 @@
 <div class="main">
-    <h2><%= key %></h2>
-    <div class="tempShareToolsHolder"></div>
-    <p style="color: white; position: absolute; margin: 1em;">iFS 1.8.2</p>
-    <div class="delayed-image-load" data-src="<%= pathStatic %>/<%= vocab_dir %>/img/320/testcard.jpg" data-width="320" style="width: 100%;"></div>
-    <button class="testIntegration">Test the integration</button>
+    <div class="ns_facewall">
+        <div class="ns_filter__cta ns_mob_toggle">Select a filter</div>
+
+        <div class="ns_facewall__filters ns_mob_toggle ">
+            <button class="ns_filter__toggle ns_filter__toggle--active" data-href="#filter">Filters</button>
+            
+            <form class="ns_filter__controls">
+                <%= include('facewall/filters_filter.tmpl') %>
+            </form>
+
+            <ul class="ns_facewall__indicator"></ul>
+            <span class="ns_facewall__counter">100/100</span>
+        </div>
+
+        <div class="ns_filter__cta ns_mob_toggle">Select a face</div>
+
+        <ul class="ns_facewall__list ns_mob_toggle">
+            <%= include('facewall/list.tmpl') %>
+        </ul>
+        
+        <div class="ns_facewall__panel ns__portrait--enabled">
+            <ul class="ns_facewall__portrait-wrapper">
+                <%= include('facewall/portrait.tmpl') %>
+            </ul>
+        </div>
+
+        <div class="ns_clearfix"></div>
+    </div>
 </div>
