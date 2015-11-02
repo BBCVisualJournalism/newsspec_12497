@@ -1,30 +1,30 @@
 <div class="main">
-    <div class="ns_facewall">
-        <div class="ns_filter__cta ns_mob_toggle">Select a filter</div>
+    <div class="facewall">
+        <div class="facewall_cta mob_toggle">Select a filter</div>
 
-        <div class="ns_facewall__filters ns_mob_toggle ">
-            <button class="ns_filter__toggle ns_filter__toggle--active" data-href="#filter">Filters</button>
+        <div class="facewall_filters mob_toggle ">
+            <button class="filter_toggle filter_toggle_active" data-href="#filter">Filters</button>
             
-            <form class="ns_filter__controls">
-                <%= include('facewall/filters_filter.tmpl') %>
+            <form id="filters">
+                <%= include('filters_filter.tmpl') %>
             </form>
 
-            <ul class="ns_facewall__indicator"></ul>
-            <span class="ns_facewall__counter">100/100</span>
+            <ul class="filter_indicator"></ul>
+            <span class="filter_counter">100/100</span>
         </div>
 
-        <div class="ns_filter__cta ns_mob_toggle">Select a face</div>
+        <div class="facewall_cta mob_toggle">Select a face</div>
 
-        <ul class="ns_facewall__list ns_mob_toggle">
-            <%= include('facewall/list.tmpl') %>
+        <ul class="facewall_list mob_toggle">
+            <%= include('list.tmpl') %>
         </ul>
         
-        <div class="ns_facewall__panel ns__portrait--enabled">
-            <ul class="ns_facewall__portrait-wrapper">
-                <%= include('facewall/portrait.tmpl') %>
+        <div class="facewall_profile facewall_profile_enabled">
+            <ul class="facewall_profile_list">
+                <%= include('profile.tmpl') %>
             </ul>
         </div>
 
-        <div class="ns_clearfix"></div>
+        <div class="clear"></div>
     </div>
 </div>

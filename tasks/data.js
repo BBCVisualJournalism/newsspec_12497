@@ -5,8 +5,8 @@ module.exports = function (grunt) {
 
         var datasheet = 'source/data/100 Women 2015 data - Sheet1.tsv';
 
-        var list_file = 'source/tmpl/facewall/list.tmpl';
-        var profile_file = 'source/tmpl/facewall/portrait.tmpl';
+        var list_file = 'source/tmpl/list.tmpl';
+        var profile_file = 'source/tmpl/profile.tmpl';
 
         var columns = {
             id: 0,
@@ -39,17 +39,17 @@ module.exports = function (grunt) {
             var markup = '';
 
             var img_class_mod = getImageClassModifier(row_cells);
-            var filter_classes = 'ns_facewall__item ns_facewall__item--filtered';
+            var filter_classes = 'facewall_listitem facewall_listitem_filtered';
             if (row_cells[columns.filter]) {
-                filter_classes += ' ns_facewall__item--filter-' + row_cells[columns.filter].trim().toLowerCase();
+                filter_classes += ' facewall_listitem_filter-' + row_cells[columns.filter].trim().toLowerCase();
             }
 
-            markup += '<li class="' + filter_classes + '" id="ns_facewall__listitem--' + row_cells[columns.id] + '">\n';
-            markup += '    <a class="ns_facewall__thumb ns_facewall__thumb--' + img_class_mod + '" href="#ns_facewall--' + row_cells[columns.id] + '">\n';
+            markup += '<li class="' + filter_classes + '" id="facewall_listitem_' + row_cells[columns.id] + '">\n';
+            markup += '    <a class="facewall_thumbnail facewall_thumbnail_' + img_class_mod + '" href="#facewall_' + row_cells[columns.id] + '">\n';
             markup += '        <span>' + row_cells[columns.firstname].trim() + ' ' + row_cells[columns.surname].trim() + '</span>\n';
             markup += '    </a>\n';
-            markup += '    <div class="ns_facewall__tooltip">\n';
-            markup += '        <span class="ns_facewall__tooltipname">' + row_cells[columns.desc].trim() + '</span>\n';
+            markup += '    <div class="facewall_tooltip">\n';
+            markup += '        <span class="facewall_tooltip_text">' + row_cells[columns.desc].trim() + '</span>\n';
             markup += '    </div>\n';
             markup += '</li>\n';
 
@@ -61,31 +61,31 @@ module.exports = function (grunt) {
 
             var img_class_mod = getImageClassModifier(row_cells);
 
-            markup += '<li class="ns_facewall__portrait" id="ns_facewall--' + row_cells[columns.id] + '">\n';
+            markup += '<li class="facewall_profile" id="facewall_' + row_cells[columns.id] + '">\n';
             markup += '    <h2 class="ns_facewall__name">' + 
                 row_cells[columns.firstname].trim() + ' ' + row_cells[columns.surname].trim() + 
                 '</h2>\n';
-            markup += '    <div class="ns_facewall__portrait-img ns_facewall__portrait-img--' + img_class_mod + '"></div>\n';
+            markup += '    <div class="facewall_profile_img facewall_profile_img_' + img_class_mod + '"></div>\n';
             if (row_cells[columns.age]) {
-                markup += '    <div class="ns_facewall__age portrait__atrribute">Age: ' + row_cells[columns.age].trim() + '</div>\n';
+                markup += '    <div class="facewall_profile_atrribute">Age: ' + row_cells[columns.age].trim() + '</div>\n';
             }
             if (row_cells[columns.job]) {
-                markup += '    <div class="ns_facewall__job portrait__atrribute">Job: ' + row_cells[columns.job].trim() + '</div>\n';
+                markup += '    <div class="facewall_profile_atrribute">Job: ' + row_cells[columns.job].trim() + '</div>\n';
             }
             if (row_cells[columns.nationality]) {
-                markup += '    <div class="ns_facewall__nationality portrait__atrribute">Nationality: ' + row_cells[columns.nationality].trim() + '</div>\n';
+                markup += '    <div class="facewall_profile_atrribute">Nationality: ' + row_cells[columns.nationality].trim() + '</div>\n';
             }
             if (row_cells[columns.bio_1]) {
-                markup += '    <p class="portrait__paragraph">' + row_cells[columns.bio_1].trim() + '</p>\n';
+                markup += '    <p class="facewall_profile_paragraph">' + row_cells[columns.bio_1].trim() + '</p>\n';
             }
             if (row_cells[columns.bio_2]) {
-                markup += '    <p class="portrait__paragraph">' + row_cells[columns.bio_2].trim() + '</p>\n';
+                markup += '    <p class="facewall_profile_paragraph">' + row_cells[columns.bio_2].trim() + '</p>\n';
             }
             if (row_cells[columns.bio_3]) {
-                markup += '    <p class="portrait__paragraph">' + row_cells[columns.bio_3].trim() + '</p>\n';
+                markup += '    <p class="facewall_profile_paragraph">' + row_cells[columns.bio_3].trim() + '</p>\n';
             }
             if (row_cells[columns.link_url] && row_cells[columns.link_text]) {
-                markup += '    <div class="ns_facewall__link portrait__atrribute">\n';
+                markup += '    <div class="facewall_profile_atrribute facewall_profile_link">\n';
                 markup += '        <a href="' + row_cells[columns.link_url].trim() + '" target="_parent">' + row_cells[columns.link_text].trim() + '</a>\n';
                 markup += '    </div>\n';
             }
