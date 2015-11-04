@@ -1,0 +1,64 @@
+.facewall_filters {
+    border-bottom: solid 1px $alto;
+    margin: 0 0 6px;
+    padding: 0 0 15px;
+}
+
+.filter_indicator {
+    padding: 0;
+    display: inline;
+}
+
+.filter_indicator_item {
+    background-color: $mercury;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 1px;
+    margin-bottom: -2px;
+}
+
+.filter_indicator_item_active {
+    background-color: $teal;
+}
+
+.filter_tab {
+    background-color: $mercury;
+    color: $tundora;
+    display: inline-block;
+    // display: none; // hidden for this facewall because there is only one filter
+    font-weight: bold;
+    padding: 5px 16px;
+    border: none;
+    line-height: 1.5;
+}
+
+.filter_tab_active {
+    background-color: $teal;
+    color: $white;
+}
+
+.filter {
+    display: none;
+    padding: 8px 0;
+    margin: 0;
+    border: none;
+    line-height: 1;
+    
+    div {
+        margin: 8px 16px 8px 0;
+        display: inline-block;
+    }
+}
+.filter_active { display: block; }
+
+.filter_checkbox {
+    float: left;
+    height: 16px;
+    width: 16px;
+}
+
+.filter_checkbox_label {
+    margin: 0;
+    margin-left: 4px;
+}

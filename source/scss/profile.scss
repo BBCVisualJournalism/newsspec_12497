@@ -1,0 +1,71 @@
+.facewall_profile_wrapper {
+    background-color: $cod_gray;
+    color: $alto;
+    padding: 0 8px;
+    transition: margin-top 150ms;
+
+    a {
+        color: $white;
+        border-color: $tundora;
+        &:hover { color: $dusty_gray; }
+    }
+}
+
+.facewall_profile {
+    display: block;
+    margin: 0;
+    padding: 16px 0;
+    border-bottom: solid 1px $tundora;
+}
+
+.facewall_profile_name {
+    font-size: 22px;
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin: 0 0 8px;
+}
+
+.facewall_profile_img {
+    background: url(/news/special/2015/newsspec_12497/content/english/img/sprite_145.jpg?v#{$image_version}) no-repeat;
+    height: 145px;
+    width: 145px;
+    margin: 0 0 16px;
+}
+
+.facewall_profile_img_1 {
+    background-position: 0 0;
+}
+@for $i from 2 to $total_profiles {
+    .facewall_profile_img_#{$i} {
+        background-position: 0 -148px * ($i - 1);
+    }
+}
+
+.facewall_profile_img_silhouette {
+    background: url(/news/special/2015/newsspec_12497/content/english/img/silhouette_145.gif) no-repeat;
+}
+
+.facewall_profile_attribute { margin: 8px 0; }
+
+@include respondMinMax ($mobile_view_max_width, false) {
+    .facewall_profile_wrapper {
+        background-color: transparent;
+        color: $tundora;
+        padding: 0 16px;
+
+        a {
+            color: $mine_shaft;
+            &:hover { color: $tory_blue };
+        }
+    }
+
+    .facewall_profile {
+        border-bottom: none;
+        padding: 0 0 16px;
+        // display: none;
+    }
+
+    .facewall_profile_active {
+        display: block;
+    }
+}

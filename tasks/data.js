@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         var data_passed = false;
 
         var getImageClassModifier = function (row_cells) {
-            if (row_cells[columns.image].toLowerCase === 'y') {
+            if (row_cells[columns.image].toLowerCase() === 'y') {
                 return row_cells[columns.id];
             } else {
                 return 'silhouette';
@@ -39,14 +39,14 @@ module.exports = function (grunt) {
             var markup = '';
 
             var img_class_mod = getImageClassModifier(row_cells);
-            var filter_classes = 'facewall_listitem facewall_listitem_filtered';
+            var filter_classes = 'facewall_list_item facewall_list_item_filtered';
             if (row_cells[columns.filter]) {
-                filter_classes += ' facewall_listitem_filter-' + row_cells[columns.filter].trim().toLowerCase();
+                filter_classes += ' facewall_list_item_filter-' + row_cells[columns.filter].trim().toLowerCase();
             }
 
-            markup += '<li class="' + filter_classes + '" id="facewall_listitem_' + row_cells[columns.id] + '">\n';
+            markup += '<li class="' + filter_classes + '" id="facewall_list_item_' + row_cells[columns.id] + '">\n';
             markup += '    <a class="facewall_thumbnail facewall_thumbnail_' + img_class_mod + '" href="#facewall_' + row_cells[columns.id] + '">\n';
-            markup += '        <span>' + row_cells[columns.firstname].trim() + ' ' + row_cells[columns.surname].trim() + '</span>\n';
+            markup += '        <span class="hidden">' + row_cells[columns.firstname].trim() + ' ' + row_cells[columns.surname].trim() + '</span>\n';
             markup += '    </a>\n';
             markup += '    <div class="facewall_tooltip">\n';
             markup += '        <span class="facewall_tooltip_text">' + row_cells[columns.desc].trim() + '</span>\n';
@@ -62,18 +62,18 @@ module.exports = function (grunt) {
             var img_class_mod = getImageClassModifier(row_cells);
 
             markup += '<li class="facewall_profile" id="facewall_' + row_cells[columns.id] + '">\n';
-            markup += '    <h2 class="ns_facewall__name">' + 
+            markup += '    <h2 class="facewall_profile_name">' + 
                 row_cells[columns.firstname].trim() + ' ' + row_cells[columns.surname].trim() + 
                 '</h2>\n';
             markup += '    <div class="facewall_profile_img facewall_profile_img_' + img_class_mod + '"></div>\n';
             if (row_cells[columns.age]) {
-                markup += '    <div class="facewall_profile_atrribute">Age: ' + row_cells[columns.age].trim() + '</div>\n';
+                markup += '    <div class="facewall_profile_attribute">Age: ' + row_cells[columns.age].trim() + '</div>\n';
             }
             if (row_cells[columns.job]) {
-                markup += '    <div class="facewall_profile_atrribute">Job: ' + row_cells[columns.job].trim() + '</div>\n';
+                markup += '    <div class="facewall_profile_attribute">Job: ' + row_cells[columns.job].trim() + '</div>\n';
             }
             if (row_cells[columns.nationality]) {
-                markup += '    <div class="facewall_profile_atrribute">Nationality: ' + row_cells[columns.nationality].trim() + '</div>\n';
+                markup += '    <div class="facewall_profile_attribute">Nationality: ' + row_cells[columns.nationality].trim() + '</div>\n';
             }
             if (row_cells[columns.bio_1]) {
                 markup += '    <p class="facewall_profile_paragraph">' + row_cells[columns.bio_1].trim() + '</p>\n';
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
                 markup += '    <p class="facewall_profile_paragraph">' + row_cells[columns.bio_3].trim() + '</p>\n';
             }
             if (row_cells[columns.link_url] && row_cells[columns.link_text]) {
-                markup += '    <div class="facewall_profile_atrribute facewall_profile_link">\n';
+                markup += '    <div class="facewall_profile_attribute facewall_profile_link">\n';
                 markup += '        <a href="' + row_cells[columns.link_url].trim() + '" target="_parent">' + row_cells[columns.link_text].trim() + '</a>\n';
                 markup += '    </div>\n';
             }

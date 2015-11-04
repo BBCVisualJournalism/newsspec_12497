@@ -1,2 +1,31 @@
 @import "news_special/defaults";
-@import "app";
+
+$total_profiles: 100;
+$image_version: 1;
+$mobile_view_max_width: 600px;
+@import "colors";
+
+html { font-size: 62.5%; }
+body {
+    font-family: Helmet, Freesans, Helvetica, Arial, sans-serif;
+    color: $tundora;
+}
+a {
+    text-decoration: none;
+    border-bottom: 1px solid $alto;
+    color: $mine_shaft;
+    font-weight: bold;
+    &:hover { color: $tory_blue; }
+}
+
+.main {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.375;
+}
+
+@import "layout";
+@import "facewall";
+@import "list";
+@import "profile";
+@import "filters";

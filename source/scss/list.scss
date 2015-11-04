@@ -1,0 +1,102 @@
+.facewall_list {
+    position: relative;
+}
+
+.facewall_list_item {
+    display: none;
+    float: left;
+    margin: 0 5px 5px 0;
+    padding: 0;
+    position: relative;
+    opacity: 0.1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+    width: 70px;
+    height: 70px;
+}
+
+.facewall_list_item_filtered {
+    display: block;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.facewall_list_item_hover {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.facewall_thumbnail {
+    display: block;
+    background: url(/news/special/2015/newsspec_12497/content/english/img/sprite_70.jpg?v#{$image_version}) no-repeat;
+    height: 100%;
+    border: none;
+}
+
+.facewall_thumbnail_1 {
+    background-position: 0 0;
+}
+
+@for $i from 2 to $total_profiles {
+    .facewall_thumbnail_#{$i} {
+        background-position: 0 -73px * ($i - 1);
+    }
+}
+
+.facewall_thumbnail_silhouette {
+    background: url(/news/special/2015/newsspec_12497/content/english/img/silhouette_70.gif) no-repeat;
+}
+
+.facewall_tooltip {
+    display: none;
+    position: absolute;
+    top: 75px;
+    width: 145px;
+    z-index: 99;
+    background-color: $cod_gray;
+    color: $white;
+    opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+}
+
+.facewall_tooltip_text {
+    display: inline-block;
+    padding: 8px;
+}
+
+.facewall_tooltip_active { display: none; }
+
+.facewall_tooltip_left { left: 0 }
+.facewall_tooltip_right { right: 0 }
+
+@include respondMinMax ($mobile_view_max_width, false) {
+    .facewall_list_item { display: block; }
+    .facewall_tooltip_active { display: block; }
+}
+
+@include respondMinMax (800px, false) {
+    .facewall_list_item {
+        margin: 0 7px 7px 0;
+        width: 100px;
+        height: 100px;
+    }
+
+    .facewall_tooltip {
+        top: 100px;
+        width: 200px;
+    }
+
+    .facewall_thumbnail {
+        background-image: url(/news/special/2015/newsspec_12497/content/english/img/sprite_100.jpg?v#{$image_version});
+    }
+    .facewall_thumbnail_1 {
+        background-position: 0 0;
+    }
+    @for $i from 2 to $total_profiles {
+        .facewall_thumbnail_#{$i} {
+            background-position: 0 -103px * ($i - 1);
+        }
+    }
+    .facewall_thumbnail_silhouette {
+        background-image: url(/news/special/2015/newsspec_12497/content/english/img/silhouette_100.gif?v#{$image_version});
+    }
+}
