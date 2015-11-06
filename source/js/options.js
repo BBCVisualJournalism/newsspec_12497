@@ -8,6 +8,7 @@ define(['bootstrap'], function (news) {
             list: 'facewall_list',
             listLi: 'facewall_list_item',
             filteredListLi: 'facewall_list_item_filtered',
+            listLiBase: 'facewall_list_item_',      // .facewall_list_item_[filtername]-[filtervalue]
             thumbnail: 'facewall_thumbnail',
             tooltip: 'facewall_tooltip',
             activeTooltip: 'facewall_tooltip_active',
@@ -21,18 +22,19 @@ define(['bootstrap'], function (news) {
             filters: 'facewall_filters',
             indicator: 'filter_indicator',
             indicatorLi: 'filter_indicator_item',
-            activeIndicatorItem: 'filter_indicator_item_active',
+            activeIndicatorLi: 'filter_indicator_item_active',
             filterTab: 'filter_tab',
             activeFilterTab: 'filter_tab_active',
             filterFieldset: 'filter',
             activeFilterFieldset: 'filter_active',
-            filterCheckbox: 'filter_checkbox'
+            filterCheckbox: 'filter_checkbox',
+            filterCounter: 'filter_counter'
         },
         ids: {
             listLiBase: 'facewall_list_item_',      // #facewall_list_item_[id]
             profileLiBase: 'facewall_',             // #facewall_[id]
             filterFieldsetBase: 'filter_',          // #filter_[filtername]
-            filterCheckboxBase: 'filter_checkbox_'  // #filter_checkbox_[filtername]_[filtervalue]
+            filterCheckboxBase: 'filter_checkbox_' // #filter_checkbox_[filtername]-[filtervalue]
         },
         events: {
             showFace: 'facewall:showface',
@@ -45,6 +47,9 @@ define(['bootstrap'], function (news) {
             backToFacewall: 'stickywidget:backtofacewall',
             showStickyWidget: 'stickywidget:showstickywidget',
             windowScrollTo: 'window:ScrollTo'
+        },
+        vars: {
+            defaultFilter: 'filter'
         },
         functions: {
             isMobileView: function () {
