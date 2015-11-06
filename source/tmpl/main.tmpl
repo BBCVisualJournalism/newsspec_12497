@@ -3,7 +3,7 @@
         <h1 class="facewall_title">Who are the 100 women?</h1>
         <div class="facewall_filters mob_toggle">
             <div class="facewall_cta">Select a filter</div>
-            <button class="filter_tab filter_tab_active" data-href="#filter">Filters</button>
+            <button class="filter_tab filter_tab_active" data-filter-name="filter">Filters</button>
             
             <form id="filters">
                 <%= include('filters_filter.tmpl') %>
@@ -20,6 +20,7 @@
         </ul>
         
         <div class="facewall_profile_wrapper">
+            <div class="back_to_facewall">Back to facewall</div>
             <ul class="facewall_profile_list">
                 <%= include('profile.tmpl') %>
             </ul>

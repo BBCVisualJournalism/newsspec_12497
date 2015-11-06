@@ -1,8 +1,7 @@
 .facewall_profile_wrapper {
-    background-color: $cod_gray;
-    color: $alto;
-    padding: 0 8px;
     transition: margin-top 150ms;
+    display: none;
+    width: 100%;
 
     a {
         color: $white;
@@ -11,11 +10,22 @@
     }
 }
 
+.facewall_profile_list {
+    margin: 0 auto;
+    padding: 0;
+}
+
 .facewall_profile {
-    display: block;
+    display: none;
     margin: 0;
-    padding: 16px 0;
-    border-bottom: solid 1px $tundora;
+    background-color: $cod_gray;
+    color: $alto;
+}
+
+.facewall_profile_active {
+    position: absolute;
+    top: 46px; left: 0;
+    padding: 16px 8px;
 }
 
 .facewall_profile_name {
@@ -23,13 +33,14 @@
     font-size: 2.2rem;
     font-weight: normal;
     margin: 0 0 8px;
+    text-align: center;
 }
 
 .facewall_profile_img {
     background: url(/news/special/2015/newsspec_12497/content/english/img/sprite_145.jpg?v#{$image_version}) no-repeat;
     height: 145px;
     width: 145px;
-    margin: 0 0 16px;
+    margin: 0 auto 16px;
 }
 
 .facewall_profile_img_1 {
@@ -42,16 +53,33 @@
 }
 
 .facewall_profile_img_silhouette {
-    background: url(/news/special/2015/newsspec_12497/content/english/img/silhouette_145.gif) no-repeat;
+    background: url(/news/special/2015/newsspec_12497/content/english/img/silhouette_145.png) no-repeat;
 }
 
 .facewall_profile_attribute { margin: 8px 0; }
+
+.back_to_facewall {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 12px;
+    background-color: $teal;
+    color: $white;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+.back_to_facewall_active { display: block; }
 
 @include respondMinMax ($mobile_view_max_width, false) {
     .facewall_profile_wrapper {
         background-color: transparent;
         color: $tundora;
         padding: 0 16px;
+        display: block;
+        margin-left: 300px;
+        width: auto;
 
         a {
             color: $mine_shaft;
@@ -60,12 +88,18 @@
     }
 
     .facewall_profile {
-        border-bottom: none;
         padding: 0 0 16px;
-        // display: none;
+        background-color: transparent;
+        color: inherit;
     }
 
-    .facewall_profile_active {
-        display: block;
-    }
+    .facewall_profile_active { display: block; }
+    .back_to_facewall_active { display: none; }
+
+    .facewall_profile_name { text-align: left; }
+    .facewall_profile_img { margin: 0 0 16px; }
+}
+
+@include respondMinMax (800px, false) {
+    .facewall_profile_wrapper { margin-left: 535px; }
 }

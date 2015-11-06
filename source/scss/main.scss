@@ -1,7 +1,7 @@
 @import "news_special/defaults";
 
 $total_profiles: 100;
-$image_version: 1;
+$image_version: 2;
 $mobile_view_max_width: 600px;
 @import "colors";
 
@@ -22,11 +22,12 @@ a {
     font-size: 16px;
     font-size: 1.6rem;
     line-height: 1.375;
+    position: relative;
+    overflow: visible;
 }
 
-@import "layout";
-@import "facewall";
 @import "list";
 @import "profile";
 @import "filters";
+@import "facewall";
 @import "no-js";

@@ -1,5 +1,11 @@
-.facewall {
-    position: relative;
+.facewall_profile_view {
+    .facewall_title { display: none; }
+    .facewall_filters { display: none; }
+    .facewall_cta { display: none; }
+    .facewall_list { display: none; }
+    .facewall_profile_wrapper { display: block; }
+    .facewall_profile_active { display: block; }
+    .back_to_facewall { display: block; }
 }
 
 .facewall_title {
@@ -13,4 +19,21 @@
     background: url(/news/special/2015/newsspec_12497/content/english/img/hand_icon.png) no-repeat 0 12px;
     padding: 10px;
     padding-left: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
 }
