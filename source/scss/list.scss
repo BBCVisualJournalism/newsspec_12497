@@ -15,15 +15,14 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
     width: 70px;
     height: 70px;
+    &:hover {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
 }
 
 .facewall_list_item_filtered {
     display: block;
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-.facewall_list_item_hover {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
