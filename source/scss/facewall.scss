@@ -1,11 +1,6 @@
 .facewall_profile_view {
-    .facewall_title { display: none; }
-    .facewall_filters { display: none; }
-    .facewall_cta { display: none; }
-    .facewall_list { display: none; }
-    .facewall_profile_wrapper { display: block; }
-    .facewall_profile_active { display: block; }
-    .back_to_facewall { display: block; }
+    .facewall_title, .facewall_filters, .facewall_cta, .facewall_list { display: none; }
+    .facewall_profile_wrapper, .facewall_profile_active, .back_to_facewall { display: block; }
 }
 
 .facewall_title {
@@ -36,4 +31,11 @@
 
 .hidden {
     display: none;
+}
+
+@include respondMinMax ($mobile_view_max_width, false) {
+    .facewall_profile_view {
+        .facewall_title, .facewall_filters, .facewall_cta, .facewall_list { display: block; }
+        .back_to_facewall { display: none; }
+    }
 }

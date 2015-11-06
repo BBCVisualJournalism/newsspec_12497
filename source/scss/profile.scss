@@ -70,13 +70,10 @@
     display: none;
 }
 
-.back_to_facewall_active { display: block; }
-
 @include respondMinMax ($mobile_view_max_width, false) {
     .facewall_profile_wrapper {
         background-color: transparent;
         color: $tundora;
-        padding: 0 16px;
         display: block;
         margin-left: 300px;
         width: auto;
@@ -93,8 +90,11 @@
         color: inherit;
     }
 
-    .facewall_profile_active { display: block; }
-    .back_to_facewall_active { display: none; }
+    .facewall_profile_active {
+        display: block;
+        position: static;
+        top: auto; left: auto;
+    }
 
     .facewall_profile_name { text-align: left; }
     .facewall_profile_img { margin: 0 0 16px; }
