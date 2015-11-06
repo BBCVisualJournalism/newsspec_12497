@@ -40,7 +40,7 @@ define(['bootstrap'], function (news) {
             showFace: 'facewall:showface',
             hideFace: 'facewall:hideface',
             updateCounter: 'facewall:updatecounter',
-            displayProfile: 'facewall:displayprofile',
+            showProfile: 'facewall:showprofile',
             hideProfile: 'facewall:hideprofile',
             filterTabClicked: 'filters:tabclicked',
             applyFilter: 'filters:applyfilter',

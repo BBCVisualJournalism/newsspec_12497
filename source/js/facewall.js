@@ -57,11 +57,11 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
 
             $thumbnail.on('click', function (e) {
                 e.preventDefault();
-                news.pubsub.emit(options.events.displayProfile, [news.$(this)]);
+                news.pubsub.emit(options.events.showProfile, [news.$(this)]);
             });
 
             $backToFacewallButton.on('click', function () {
-                news.pubsub.emit(options.events.backToFacewall);
+                news.pubsub.emit(options.events.hideProfile);
             });
         },
 
