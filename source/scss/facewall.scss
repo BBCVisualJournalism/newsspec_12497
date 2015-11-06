@@ -16,9 +16,7 @@
     padding-left: 20px;
 }
 
-.clear {
-    clear: both;
-}
+.clear { clear: both; }
 
 .sr-only {
     position: absolute;
@@ -29,9 +27,7 @@
     overflow: hidden;
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 @include respondMinMax ($mobile_view_max_width, false) {
     .facewall_profile_view {

@@ -46,7 +46,7 @@ module.exports = function (grunt) {
 
             markup += '<li class="' + filter_classes + '" id="facewall_list_item_' + row_cells[columns.id] + '">\n';
             markup += '    <a class="facewall_thumbnail facewall_thumbnail_' + img_class_mod + '" href="#facewall_' + row_cells[columns.id] + '">\n';
-            markup += '        <span class="hidden">' + row_cells[columns.firstname].trim() + ' ' + row_cells[columns.surname].trim() + '</span>\n';
+            markup += '        <span class="sr-only">' + row_cells[columns.firstname].trim() + ' ' + row_cells[columns.surname].trim() + '</span>\n';
             markup += '    </a>\n';
             markup += '    <div class="facewall_tooltip">\n';
             markup += '        <span class="facewall_tooltip_text">' + row_cells[columns.desc].trim() + '</span>\n';
