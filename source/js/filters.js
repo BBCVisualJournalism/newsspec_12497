@@ -95,7 +95,7 @@ define(['bootstrap', 'options'], function (news, options) {
             }
             $indicatorItems.removeClass(options.classes.activeIndicatorLi)
                 .slice(0, filteredCount).addClass(options.classes.activeIndicatorLi);
-            $counter.text(filteredCount + ' / ' + this.totalProfiles);
+            $counter.text(filteredCount + '/' + this.totalProfiles + ' women');
         },
 
         rearrangeList: function () {

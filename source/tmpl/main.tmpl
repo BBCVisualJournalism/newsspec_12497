@@ -1,7 +1,7 @@
 <div class="main">
     <div class="facewall">
         <h1 class="facewall_title">Who are the 100 women?</h1>
-        <div class="facewall_filters mob_toggle">
+        <div class="facewall_filters">
             <div class="facewall_cta">Select a filter</div>
             <button class="filter_tab filter_tab_active hidden" data-filter-name="filter">Filters</button>
             
@@ -10,12 +10,12 @@
             </form>
 
             <ul class="filter_indicator"></ul>
-            <span class="filter_counter">100/100</span>
+            <div class="filter_counter">100/100 women</div>
         </div>
 
-        <div class="facewall_cta mob_toggle">Select a face</div>
+        <div class="facewall_cta">Select a face</div>
 
-        <ul class="facewall_list mob_toggle">
+        <ul class="facewall_list">
             <%= include('list.tmpl') %>
         </ul>
         
