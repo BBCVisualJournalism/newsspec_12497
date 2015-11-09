@@ -62,12 +62,20 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
 
             $thumbnail.on('mouseover', function (e) {
                 e.preventDefault();
-                news.pubsub.emit(options.events.faceMouseOver, [news.$(this)]);
+                news.pubsub.emit(options.events.faceFocus, [news.$(this)]);
             });
 
             $thumbnail.on('mouseout', function (e) {
                 e.preventDefault();
-                news.pubsub.emit(options.events.faceMouseOut, [news.$(this)]);
+                news.pubsub.emit(options.events.faceBlur, [news.$(this)]);
+            });
+
+            $thumbnail.on('focus', function () {
+                news.pubsub.emit(options.events.faceFocus, [news.$(this)]);
+            });
+
+            $thumbnail.on('blur', function () {
+                news.pubsub.emit(options.events.faceBlur, [news.$(this)]);
             });
 
             $backToFacewallButton.on('click', function () {
