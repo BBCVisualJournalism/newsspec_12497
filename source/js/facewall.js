@@ -61,21 +61,23 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
             });
 
             $thumbnail.on('mouseover', function (e) {
-                e.preventDefault();
-                news.pubsub.emit(options.events.faceFocus, [news.$(this)]);
+                // hideTooltip first to avoid showTooltip being called when tooltip is already active
+                news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
+                news.pubsub.emit(options.events.showTooltip, [news.$(this)]);
             });
 
             $thumbnail.on('mouseout', function (e) {
-                e.preventDefault();
-                news.pubsub.emit(options.events.faceBlur, [news.$(this)]);
+                news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
             });
 
             $thumbnail.on('focus', function () {
-                news.pubsub.emit(options.events.faceFocus, [news.$(this)]);
+                // hideTooltip first to avoid showTooltip being called when tooltip is already active
+                news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
+                news.pubsub.emit(options.events.showTooltip, [news.$(this)]);
             });
 
             $thumbnail.on('blur', function () {
-                news.pubsub.emit(options.events.faceBlur, [news.$(this)]);
+                news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
             });
 
             $backToFacewallButton.on('click', function () {

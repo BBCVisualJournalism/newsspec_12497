@@ -4,8 +4,8 @@ define(['bootstrap', 'options'], function (news, options) {
 
     Tooltips.prototype = {
         init: function () {
-            news.pubsub.on(options.events.faceFocus, this.showTooltip.bind(this));
-            news.pubsub.on(options.events.faceBlur, this.hideTooltip.bind(this));
+            news.pubsub.on(options.events.showTooltip, this.showTooltip.bind(this));
+            news.pubsub.on(options.events.hideTooltip, this.hideTooltip.bind(this));
         },
 
         showTooltip: function ($thumbnail) {
