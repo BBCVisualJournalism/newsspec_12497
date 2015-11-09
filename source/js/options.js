@@ -42,6 +42,8 @@ define(['bootstrap'], function (news) {
             updateCounter: 'facewall:updatecounter',
             showProfile: 'facewall:showprofile',
             hideProfile: 'facewall:hideprofile',
+            faceMouseOver: 'facewall:facemouseover',
+            faceMouseOut: 'facewall:facemouseout',
             filterTabClicked: 'filters:tabclicked',
             applyFilter: 'filters:applyfilter',
             backToFacewall: 'stickywidget:backtofacewall',

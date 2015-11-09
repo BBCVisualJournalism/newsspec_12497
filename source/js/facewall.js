@@ -60,6 +60,16 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
                 news.pubsub.emit(options.events.showProfile, [news.$(this)]);
             });
 
+            $thumbnail.on('mouseover', function (e) {
+                e.preventDefault();
+                news.pubsub.emit(options.events.faceMouseOver, [news.$(this)]);
+            });
+
+            $thumbnail.on('mouseout', function (e) {
+                e.preventDefault();
+                news.pubsub.emit(options.events.faceMouseOut, [news.$(this)]);
+            });
+
             $backToFacewallButton.on('click', function () {
                 news.pubsub.emit(options.events.hideProfile);
             });
