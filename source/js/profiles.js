@@ -92,7 +92,7 @@ define(['bootstrap', 'options'], function (news, options) {
             var optimumScrollPos = myScrollTop;
 
             if (myScrollTop > this.iframeOffset.top + this.listOffset.top) {
-                optimumScrollPos = myScrollTop - (this.iframeOffset.top + this.listOffset.top);
+                optimumScrollPos = myScrollTop - (this.iframeOffset.top + this.listOffset.top) + 10;
             } else {
                 optimumScrollPos = 0;
             }
