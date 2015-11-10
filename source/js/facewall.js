@@ -61,8 +61,9 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
             });
 
             $thumbnail.on('mouseover', function (e) {
-                // hideTooltip first to avoid showTooltip being called when tooltip is already active
-                news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
+                // hide all tooltips first to avoid showTooltip being called when another tooltip is already active
+                var $allThumbnails = news.$('.' + options.classes.thumbnail);
+                news.pubsub.emit(options.events.hideTooltip, [$allThumbnails]);
                 news.pubsub.emit(options.events.showTooltip, [news.$(this)]);
             });
 
@@ -71,8 +72,9 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
             });
 
             $thumbnail.on('focus', function () {
-                // hideTooltip first to avoid showTooltip being called when tooltip is already active
-                news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
+                // hide all tooltips first to avoid showTooltip being called when another tooltip is already active
+                var $allThumbnails = news.$('.' + options.classes.thumbnail);
+                news.pubsub.emit(options.events.hideTooltip, [$allThumbnails]);
                 news.pubsub.emit(options.events.showTooltip, [news.$(this)]);
             });
 
