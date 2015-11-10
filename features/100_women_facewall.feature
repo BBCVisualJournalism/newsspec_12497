@@ -27,7 +27,7 @@ Feature: 100 Women Facewall
     Given I am on a mobile device
     When I select a thumbnail
     Then I should be taken to the bio of my selected person
-    And I should be able to scroll up and down to view other bios
+    # And I should be able to scroll up and down to view other bios ## this is no longer a feature
     And I should see a button that can take me back to the facewall
 
   Scenario: Getting out of 'selected thumbnail' view - Mobile
@@ -60,7 +60,12 @@ Feature: 100 Women Facewall
   Scenario: Selecting a filter - desktop
     Given I am on a tablet or wider device
     And I have selected a filter
-    And the filtered thumbnails should retain their ordering
+    Then the filtered thumbnails should retain their ordering
     And all of the thumbnails that don't apply to the filter drop to the bottom
     And they retain their ordering within the unfiltered faces
     And they should be faded slightly
+
+  Scenario: Scrolling - desktop
+    Given I am on desktop
+    When I scroll up or down the page
+    Then the bio on the right should be repositioned so it is visible in the viewport
