@@ -6,7 +6,7 @@
 }
 
 .facewall_list_item {
-    display: none;
+    // display: none; // this line is in a <style> element to prevent IE bug with li rendered as list items instead of blocks
     float: left;
     margin: 0 5px 5px 0;
     padding: 0;
@@ -15,13 +15,14 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
     width: 70px;
     height: 70px;
+    list-style: none;
     &:hover {
         opacity: 1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     }
 }
 
-.facewall_list_item_filtered {
+.facewall_list .facewall_list_item_filtered {
     display: block;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -93,8 +94,8 @@
         max-width: 300px;
         float: left;
         margin-bottom: 38px;
+        .facewall_list_item { display: block; }
     }
-    .facewall_list_item { display: block; }
     .facewall_tooltip_active { display: block; }
 }
 
