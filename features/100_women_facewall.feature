@@ -60,10 +60,22 @@ Feature: 100 Women Facewall
   Scenario: Selecting a filter - desktop
     Given I am on a tablet or wider device
     And I have selected a filter
-    Then the filtered thumbnails should retain their ordering
-    And all of the thumbnails that don't apply to the filter drop to the bottom
-    And they retain their ordering within the unfiltered faces
-    And they should be faded slightly
+    Then all of the thumbnails that don't apply to the filter should drop to the bottom
+    And the filtered thumbnails should retain their ordering
+    And the unfiltered thumbnails should retain their ordering
+    And the unfiltered thumbnails should be faded
+
+  Scenario: Unselecting a filter with other filters still active
+    Given there is more than one active filter
+    When I unselect an active filter
+    Then all the thumbnails that applied to that filter should join the unfiltered thumbnails
+    And all the thumbnails that apply to filters that haven't been unselected should remain at the top
+
+  Scenario: Unselecting a filter with no other active filters
+    Given there is only one active filter
+    When I unselect the active filter
+    Then all thumbnails should be shown
+    And all thumbnails should be in their original order
 
   Scenario: Scrolling - desktop
     Given I am on desktop
