@@ -52,7 +52,11 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
 
     Facewall.prototype = {
         init: function () {
-            news.$('body').removeClass('no-js');
+            var $body = news.$('body');
+            $body.removeClass('no-js');
+            if (!('ontouchstart' in document.documentElement)) {
+                $body.addClass('no-touch');
+            }
             this.filters.init();
             this.profiles.init();
             this.tooltips.init();
@@ -84,18 +88,20 @@ define(['bootstrap', 'options', 'filters', 'profiles', 'tooltips'], function (ne
             });
 
             $thumbnail.on('mouseover', function (e) {
-                // hide all tooltips first to avoid showTooltip being called when another tooltip is already active
-                var $allThumbnails = news.$('.' + options.classes.thumbnail);
-                news.pubsub.emit(options.events.hideTooltip, [$allThumbnails]);
-                news.pubsub.emit(options.events.showTooltip, [news.$(this)]);
+                if (news.$('body').hasClass('no-touch')) {
+                    var $allThumbnails = news.$('.' + options.classes.thumbnail);
+                    news.pubsub.emit(options.events.hideTooltip, [$allThumbnails]);
+                    news.pubsub.emit(options.events.showTooltip, [news.$(this)]);
+                }
             });
 
             $thumbnail.on('mouseout', function (e) {
-                news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
+                if (news.$('body').hasClass('no-touch')) {
+                    news.pubsub.emit(options.events.hideTooltip, [news.$(this)]);
+                }
             });
 
             $thumbnail.on('focus', function () {
-                // hide all tooltips first to avoid showTooltip being called when another tooltip is already active
                 var $allThumbnails = news.$('.' + options.classes.thumbnail);
                 news.pubsub.emit(options.events.hideTooltip, [$allThumbnails]);
                 news.pubsub.emit(options.events.showTooltip, [news.$(this)]);
