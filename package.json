@@ -5,7 +5,7 @@
     "url": "http://github.com/BBCVisualJournalism/newsspec_12497"
   },
   "description":    "Global news project focusing on 100 inspirational women",
-  "version":        "0.1.20",
+  "version":        "0.1.21",
   "devDependencies": {
     "casperjs":                         "1.1.0-beta3",
     "grunt":                            "~0.4.0",
